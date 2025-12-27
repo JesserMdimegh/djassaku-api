@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: djassaku-api
+    env: node
+    buildCommand: npm install
+    startCommand: npm run start:dev
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: postgresql://postgres:Jesserjesser12345*@db.yuqlhblfelywujfxbymv.supabase.co:5432/postgres
+      - key: JWT_SECRET
+        value: djassaku-super-secret-jwt-key-2024
+      - key: PORT
+        value: 10000
