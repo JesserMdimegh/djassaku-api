@@ -13,3 +13,5 @@ services:
         value: djassaku-super-secret-jwt-key-2024
       - key: PORT
         value: 10000
+      - key: FRONTEND_URL
+        value: https://djassaku.vercel.app
