@@ -11,9 +11,6 @@ export class Product {
   @Column('text')
   description: string;
 
-  @Column()
-  imageUrl: string;
-
   @Column('decimal', { precision: 10, scale: 2 })
   price: number;
 
@@ -25,6 +22,9 @@ export class Product {
 
   @Column({ nullable: true })
   releaseDate: Date;
+
+  @Column({ nullable: true })
+  imageUrl: string;
 
   @CreateDateColumn()
   createdAt: Date;

@@ -10,13 +10,13 @@ export class CreateProductDto {
   @IsString()
   description: string;
 
-  @ApiProperty({ description: 'Product image URL or path' })
-  @IsString()
-  imageUrl: string;
-
   @ApiProperty({ description: 'Product price' })
   @IsNumber()
   price: number;
+
+  @ApiProperty({ description: 'Product image URL', required: false })
+  @IsOptional()
+  imageUrl?: string;
 
   @ApiProperty({ description: 'Is product active', required: false })
   @IsOptional()

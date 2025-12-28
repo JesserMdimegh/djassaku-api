@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, BadRequestException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Product } from './entities/product.entity';
@@ -13,6 +13,27 @@ export class ProductsService {
   ) {}
 
   async create(createProductDto: CreateProductDto): Promise<Product> {
+    console.log('Received DTO:', createProductDto);
+    console.log('imageUrl value:', createProductDto.imageUrl);
+    console.log('imageUrl type:', typeof createProductDto.imageUrl);
+    
+    // Validate imageUrl if provided
+    if (createProductDto.imageUrl) {
+      try {
+        // Check if it's a relative path (starts with /uploads/)
+        if (createProductDto.imageUrl.startsWith('/uploads/')) {
+          console.log('Relative path validation passed');
+        } else {
+          // Try to validate as full URL
+          new URL(createProductDto.imageUrl);
+          console.log('Full URL validation passed');
+        }
+      } catch {
+        console.log('URL validation failed');
+        throw new BadRequestException('imageUrl must be a valid URL address or relative path starting with /uploads/');
+      }
+    }
+    
     const product = this.productsRepository.create(createProductDto);
     return this.productsRepository.save(product);
   }
@@ -37,6 +58,23 @@ export class ProductsService {
   }
 
   async update(id: number, updateProductDto: UpdateProductDto): Promise<Product> {
+    // Validate imageUrl if provided
+    if (updateProductDto.imageUrl) {
+      try {
+        // Check if it's a relative path (starts with /uploads/)
+        if (updateProductDto.imageUrl.startsWith('/uploads/')) {
+          console.log('Relative path validation passed');
+        } else {
+          // Try to validate as full URL
+          new URL(updateProductDto.imageUrl);
+          console.log('Full URL validation passed');
+        }
+      } catch {
+        console.log('URL validation failed');
+        throw new BadRequestException('imageUrl must be a valid URL address or relative path starting with /uploads/');
+      }
+    }
+    
     await this.productsRepository.update(id, updateProductDto);
     return this.findOne(id);
   }
