@@ -26,12 +26,12 @@ export class FileUploadService {
         throw error;
       }
 
-      const { data: publicUrl } = this.supabase.storage
+      const { data: publicUrlData } = this.supabase.storage
         .from('product-images')
         .getPublicUrl(fileName);
 
       return {
-        url: publicUrl,
+        url: publicUrlData.publicUrl,
         filename: fileName,
       };
     } catch (error) {
