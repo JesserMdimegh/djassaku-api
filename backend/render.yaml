@@ -14,7 +14,7 @@ services:
       - key: SUPABASE_URL
         value: https://yuqlhblfelywujfxbymv.supabase.co
       - key: SUPABASE_ANON_KEY
-        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBpcyxlLWRlc3QiLCJwYXVyIjoic0g
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1cWxoYmxmZWx5d3VqZnhieW12Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY4NDcxMjMsImV4cCI6MjA4MjQyMzEyM30.6Z9yvGieUHrLkoqstUM06WWUF4xao2AEQpUB-yCnPZk
       - key: PORT
         value: 10000
       - key: FRONTEND_URL

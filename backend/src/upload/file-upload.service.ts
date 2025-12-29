@@ -16,7 +16,7 @@ export class FileUploadService {
     try {
       const fileName = `${Date.now()}-${file.originalname}`;
       const { data, error } = await this.supabase.storage
-        .from('product-images')
+        .from('product-image')
         .upload(fileName, file.buffer, {
           contentType: file.mimetype,
           upsert: false,
@@ -27,7 +27,7 @@ export class FileUploadService {
       }
 
       const { data: publicUrlData } = this.supabase.storage
-        .from('product-images')
+        .from('product-image')
         .getPublicUrl(fileName);
 
       return {
