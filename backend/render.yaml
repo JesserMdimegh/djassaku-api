@@ -8,13 +8,13 @@ services:
       - key: NODE_ENV
         value: production
       - key: DATABASE_URL
-        value: postgresql://postgres.yuqlhblfelywujfxbymv:Jesserjesser12345*@aws-1-eu-west-1.pooler.supabase.com:5432/postgres?sslmode=require
+        value: postgresql://postgres:Jesserjesser12345*@db.sugiuvwafblelsjspihw.supabase.co:5432/postgres
       - key: JWT_SECRET
         value: djassaku-super-secret-jwt-key-2024
       - key: SUPABASE_URL
-        value: https://yuqlhblfelywujfxbymv.supabase.co
+        value: https://sugiuvwafblelsjspihw.supabase.co
       - key: SUPABASE_ANON_KEY
-        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1cWxoYmxmZWx5d3VqZnhieW12Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY4NDcxMjMsImV4cCI6MjA4MjQyMzEyM30.6Z9yvGieUHrLkoqstUM06WWUF4xao2AEQpUB-yCnPZk
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN1Z2l1dndhZmJsZWxzanNwaWh3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1MzUzNzIsImV4cCI6MjA4MzExMTM3Mn0.TioCYU3Kc6p36Ntl93-JOvTCbf8XltOFpSiWUyqZ_5M
       - key: PORT
         value: 10000
       - key: FRONTEND_URL
