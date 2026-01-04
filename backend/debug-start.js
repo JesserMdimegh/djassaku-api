@@ -6,11 +6,11 @@ dotenv.config();
 console.log('=== ENVIRONMENT VARIABLES DEBUG ===');
 console.log('NODE_ENV:', process.env.NODE_ENV);
 console.log('PORT:', process.env.PORT);
-console.log('DATABASE_URL:', process.env.DATABASE_URL ? '***SET***' : 'NOT SET');
-console.log('JWT_SECRET:', process.env.JWT_SECRET ? '***SET***' : 'NOT SET');
+console.log('DATABASE_URL: process.env.DATABASE_URL');
+console.log('JWT_SECRET:, process.env.JWT_SECRET ');
 console.log('FRONTEND_URL:', process.env.FRONTEND_URL);
-console.log('SUPABASE_URL:', process.env.SUPABASE_URL ? '***SET***' : 'NOT SET');
-console.log('SUPABASE_ANON_KEY:', process.env.SUPABASE_ANON_KEY ? '***SET***' : 'NOT SET');
+console.log('SUPABASE_URL:', process.env.SUPABASE_URL );
+console.log('SUPABASE_ANON_KEY:', process.env.SUPABASE_ANON_KEY );
 
 // Test database connection
 const { Client } = require('pg');
