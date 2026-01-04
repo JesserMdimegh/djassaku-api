@@ -21,6 +21,13 @@ import { User } from './auth/entities/user.entity';
       entities: [Product, Order, User],
       synchronize: true, // Only for development
       ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+      retryAttempts: 5,
+      retryDelay: 3000,
+      extra: {
+        max: 20,
+        connectionTimeoutMillis: 30000,
+        idleTimeoutMillis: 30000,
+      },
     }),
     ProductsModule,
     OrdersModule,
